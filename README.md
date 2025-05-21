@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# Scriptory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Scriptory** és una caixa d'eines per a escriptors que busca oferir en un mateix lloc tot allò que puguin necessitar.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Característiques
 
-## Expanding the ESLint configuration
+- **Bloc de notes** senzill, amb suport per a markdown
+- **Emmagatzematge local**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Futures actualitzacions
+- **Sistema de fitxers i carpetes** per organitzar les notes
+- **Pagines de personatge / objecte / lloc**
+- **Arbres genealògics**
+- **Personalització de l'aplicació**
+- **Sincronització al núbol** per a donar sopot a múltiples dispositius
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Tecnologies emprades
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Electron**
+- **React + Vite**
+- **Tailwind CSS**
+- **Zustand**
+- **Node.js**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
+## Llicència
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Aquest projecte està disponible sota la Llicència MIT.
+
+---
+
+## Manual d'ús
+
+```bash
+# Clonar el repositori
+git clone https://github.com/Elena-Barrachina/Scriptory.git
+cd Scriptory
+
+# Instal·lar dependències
+npm install
+
+# Executar el programa
+npm run dev
