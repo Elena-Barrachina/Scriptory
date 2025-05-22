@@ -1,11 +1,13 @@
 import { create } from 'zustand';
 
+export type Section = 'home' | 'write' | 'library' | 'tree' | 'settings';
+
 type UIState = {
-  theme: 'light' | 'dark';
-  setTheme: (theme: 'light' | 'dark') => void;
+  section: Section;
+  setSection: (section:Section) => void;
 };
 
 export const useUIStore = create<UIState>((set) => ({
-  theme: 'light',
-  setTheme: (theme) => set({ theme }),
+  section: 'home',
+  setSection: (section) => set({ section }),
 }));
