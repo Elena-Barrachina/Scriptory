@@ -1,19 +1,11 @@
 import { useUIStore } from '@/stores/uiStore';
-
-const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'write', label: 'Writing Pad' },
-  { id: 'library', label: 'Library' },
-  { id: 'tree', label: 'Family Tree' },
-  { id: 'settings', label: 'Settings' },
-];
+import { navItems } from '@/constants/navItems';
 
 export function Header() {
   const { section, setSection } = useUIStore();
 
   return (
     <header className="flex items-center justify-between px-6 py-3 bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 shadow-md">
-      {/* Navbar */}
       <nav className="flex space-x-4">
         {navItems.map((item) => (
           <button

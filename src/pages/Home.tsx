@@ -1,19 +1,41 @@
-import { GlassCard } from '../components/ui/GlassCard';
 import { useUIStore } from '@/stores/uiStore';
+import { navItems } from '@/constants/navItems';
+
+const labelMap: Record<string, string> = {};
+navItems.forEach(({ id, label }) => {
+  labelMap[id] = label;
+});
 
 export function Home() {
-  const { setSection } = useUIStore();
+  const { lastSection, setSection } = useUIStore();
+
+  const handleClick = () => {
+    if (lastSection) {
+      setSection(lastSection);
+    } else {
+      setSection('write');
+    }
+  };
 
   return (
-    <div className="relative flex justify-center items-center min-h-[80vh] px-4 overflow-hidden">
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-600 opacity-20 blur-[160px] rounded-full -z-10 animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-teal-400 opacity-20 blur-[120px] rounded-full -z-10 animate-pulse" />
-      <GlassCard>
-        <h1 className="text-3xl font-bold mb-3 text-white">Scriptory</h1>
-          <p className="text-sm text-zinc-200 mb-6 text-center">
-            La caixa d'eines per a escriptors.
-          </p>
-      </GlassCard>
+    <div className="p-6">
+      <div
+        onClick={handleClick}
+        className="cursor-pointer rounded-md bg-zinc-900 bg-opacity-70 text-zinc-100 px-5 py-3
+                  backdrop-blur-md hover:bg-opacity-90 transition duration-300
+                  flex items-center justify-center space-x-3 select-none"
+        role="button"
+        aria-label="Navigate to last visited section or start writing"
+      >
+        <span className="font-semibold text-lg">
+          {lastSection
+            ? <>Tornar a <span className="underline">{labelMap[lastSection]}</span></>
+            : <>Començar a crear</>}
+        </span>
+      </div>
+
+      <h1 className="text-2xl font-bold">Scriptory</h1>
+      <p className="text-zinc-600 dark:text-zinc-400 mt-2">La caixa d'eines per a escriptors.</p>
     </div>
   );
 }

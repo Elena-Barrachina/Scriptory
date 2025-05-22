@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useUIStore } from '@/stores/uiStore';
 import { Layout } from '@/components/Layout';
 import { WritingPad } from '@/pages/WritingPad';
@@ -31,6 +32,18 @@ function App() {
       {renderSection()}
     </Layout>
   );
+}
+
+function LastVisited() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      localStorage.setItem('lastVisited', location.pathname);
+    }
+  }, [location]);
+
+  return null;
 }
 
 export default App;
