@@ -16,6 +16,7 @@ function createWindow() {
 
   if (devUrl) {
     win.loadURL(devUrl);
+    win.webContents.openDevTools();
   } else {
     win.loadFile(path.join(__dirname, '../dist/index.html'));
   }

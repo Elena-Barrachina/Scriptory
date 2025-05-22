@@ -1,16 +1,16 @@
 {
   "name": "scriptory",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "main": "electron/main.js",
   "scripts": {
     "dev": "concurrently \"vite\" \"electron .\"",
     "build": "vite build && electron-builder",
     "start": "electron .",
-    "lint": "eslint .",
-    "lint:css": "stylelint '**/*.{css,scss}'",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:css": "stylelint '**/*.{css,scss}'"
   },
   "build": {
     "appId": "com.scriptory.app",
@@ -36,8 +36,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.4.1",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
