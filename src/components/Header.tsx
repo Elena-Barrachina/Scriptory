@@ -6,7 +6,7 @@ export function Header() {
 
   return (
     <header className="flex items-center justify-between px-6 py-3 bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 shadow-md">
-      <nav className="flex space-x-4">
+      <nav className="flex space-x-4 items-center">
         {navItems.map((item) => (
           <button
             key={item.id}

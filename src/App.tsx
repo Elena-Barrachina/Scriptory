@@ -1,49 +1,29 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useUIStore } from '@/stores/uiStore';
 import { Layout } from '@/components/Layout';
-import { WritingPad } from '@/pages/WritingPad';
-import { Library } from '@/pages/Library';
-import { FamilyTree } from '@/pages/FamilyTree';
-import { Settings } from '@/pages/Settings';
-import { Home } from '@/pages/Home';
+import { Banner } from '@/components/ui/Banner';
 
 function App() {
-  const { section } = useUIStore();
+  const { section, setSection } = useUIStore();
 
-  const renderSection = () => {
-    switch (section) {
-      case 'write':
-        return <WritingPad />;
-      case 'library':
-        return <Library />;
-      case 'tree':
-        return <FamilyTree />;
-      case 'settings':
-        return <Settings />;
-      case 'home':
-      default:
-        return <Home />;
+  const lastVisited = localStorage.getItem('lastVisited');
+
+  useEffect(() => {
+    if (section !== 'home') {
+      localStorage.setItem('lastVisited', section);
     }
-  };
+  }, [section]);
 
   return (
     <Layout>
-      {renderSection()}
+      {section === 'home' && (
+        <Banner
+          lastSection={lastVisited}
+          onNavigate={(section) => setSection(section as any)}
+        />
+      )}
     </Layout>
   );
-}
-
-function LastVisited() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname !== '/') {
-      localStorage.setItem('lastVisited', location.pathname);
-    }
-  }, [location]);
-
-  return null;
 }
 
 export default App;
