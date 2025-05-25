@@ -20,11 +20,11 @@ export function Home() {
   };
 
   return (
-    <div className="p-6">
-      <div className="text-2xl font-bold">
+    <div className='p-6'>
+      <div className='text-2xl font-bold text-teal-500 dark:text-teal-500'>
         Scriptory
       </div>
-      <p>
+      <p className='text-zinc-900 dark:text-zinc-100'>
         La caixa d'eines per als escriptors.
       </p>
     </div>

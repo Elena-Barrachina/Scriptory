@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { navItems } from '@/constants/navItems';
 
 type BannerProps = {
@@ -12,25 +11,22 @@ navItems.forEach(({ id, label }) => {
 });
 
 export function Banner({ lastSection, onNavigate }: BannerProps) {
-  const handleClick = () => {
-    onNavigate(lastSection ?? 'write');
-  };
+  const label = lastSection && labelMap[lastSection];
+
+  const target = lastSection && label ? lastSection : 'write';
+  const prompt = lastSection && label ? `Tornar a l'última secció: ${label}` : 'Comença a escriure!';
 
   return (
     <div
-      onClick={handleClick}
-      className={`cursor-pointer rounded-md px-5 py-3 flex items-center justify-between select-none transition-colors duration-300`}
+      onClick={() => onNavigate(target)}
+      className="cursor-pointer bg-gradient-to-r from-teal-500 to-#533747
+        text-zinc-900 dark:text-zinc-100 px-6 py-20 rounded-md shadow-md
+        hover:from-teal-900 hover:to-teal-500 transition-colors
+        m-6 text-center text-3xl font-medium"
       role="button"
       aria-label="Navigate to last visited section or start writing"
     >
-      <div
-        onClick={handleClick}
-        className="cursor-pointer bg-gradient-to-r from-teal-400 to-blue-500 text-white px-6 py-4 rounded-md shadow-md hover:from-teal-500 hover:to-blue-600 transition-colors select-none"
-      >
-        {lastSection
-          ? `Tornar a l'última secció: ${lastSection}`
-          : 'Començar a crear'}
-      </div>
+      {prompt}
     </div>
   );
 }

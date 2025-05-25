@@ -1,3 +1,3 @@
 export function WritingPad() {
-  return <div className="p-6 text-2xl font-bold">Bloc de notes</div>;
+  return <div className="p-6 text-2xl font-bold text-zinc-900 dark:text-zinc-100">Bloc de notes</div>;
 }

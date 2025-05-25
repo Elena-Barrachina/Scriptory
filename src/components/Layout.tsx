@@ -1,12 +1,10 @@
-import { Navbar } from './Navbar';
+import { Header } from './Header';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-zinc-950 to-black text-white">
-      <Navbar />
-      <main className="flex-grow px-4 py-8">
-        {children}
-      </main>
+    <div className="min-h-screen bg-zinc-100 text-zinc-900 dark:bg-zinc-900 text-zinc-100">
+      <Header />
+      <main>{children}</main>
     </div>
   );
 }
