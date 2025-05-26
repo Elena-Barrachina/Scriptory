@@ -19,11 +19,9 @@ function createWindow() {
   });
 
   if (isDev) {
-    // Load Vite dev server
     win.loadURL('http://localhost:3000');
     win.webContents.openDevTools();
   } else {
-    // Load the built app
     win.loadFile(path.join(__dirname, '../dist/index.html'));
   }
 }

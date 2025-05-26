@@ -19,10 +19,12 @@ export function Banner({ lastSection, onNavigate }: BannerProps) {
   return (
     <div
       onClick={() => onNavigate(target)}
-      className="cursor-pointer bg-gradient-to-r from-teal-500 to-#533747
-        text-zinc-900 dark:text-zinc-100 px-6 py-20 rounded-md shadow-md
-        hover:from-teal-900 hover:to-teal-500 transition-colors
-        m-6 text-center text-3xl font-medium"
+      className="cursor-pointer bg-linear-to-r from-teal-500 to-teal-200
+        hover:from-teal-200 hover:to-teal-500
+        transition-all duration-700
+        text-zinc-100 m-6 text-center text-3xl font-medium
+        dark:text-zinc-900
+        px-6 py-20 rounded-md shadow-md"
       role="button"
       aria-label="Navigate to last visited section or start writing"
     >

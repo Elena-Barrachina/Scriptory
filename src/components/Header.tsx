@@ -12,17 +12,23 @@ export function Header() {
   }
 
   return (
-    <header className="flex items-center justify-between px-6 py-3 bg-zinc-100 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-100 shadow-md">
+    <header className="flex items-center justify-between px-6 py-3
+      bg-zinc-100 text-zinc-900 shadow-md
+      dark:bg-zinc-900 dark:text-zinc-100
+      transition-all duration-700"
+    >
       <div className="flex items-center space-x-6">
         <span className="text-xl font-bold">Scriptory</span>
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => setSection(item.id as any)}
-            className={`text-sm font-medium transition-colors duration-1000 border-b-2 ${section === item.id
+            className={`text-sm font-medium transition-colors duration-700 border-b-2
+              ${section === item.id
                 ? 'border-teal-500 text-teal-500'
                 : 'border-transparent hover:border-zinc-400 dark:hover:border-zinc-500'
-              }`}
+              }
+            `}
           >
             {item.label}
           </button>
@@ -31,8 +37,10 @@ export function Header() {
       <button
         onClick={darkModeHandler}
         aria-label="Toggle theme"
-        className={`ml-4 p-2 rounded-full transition-colors duration-1000 ${dark ? 'bg-zinc-100 text-zinc-900' : 'bg-zinc-900 text-zinc-100'
-          }`}
+        className={`ml-4 p-2 rounded-full transition-colors duration-700
+          ${dark ? 'bg-zinc-100 text-zinc-900' : 'bg-zinc-900 text-zinc-100'
+          }
+        `}
       >
         {!dark ? (
           <span className="text-yellow-400">☀️</span>

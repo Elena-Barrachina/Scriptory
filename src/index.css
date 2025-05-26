@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-eggplant: #533747;
+  --color-cadet-gray: #76949f;
+}
+
 html, body , #root {
   height: 100%;
 }
-
-
-@custom-variant dark (&:where(.dark, .dark *));

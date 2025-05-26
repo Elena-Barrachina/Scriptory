@@ -23,8 +23,13 @@ export function Navbar() {
   const icon = darkMode ? '☀️' : '🌙';
 
   return (
-    <nav className="flex space-x-4 bg-zinc-100 dark:bg-zinc-900 px-6 py-3 shadow-md text-zinc-900 dark:text-zinc-100">
-      <h1 className="text-lg font-semibold tracking-tight text-zinc-800 dark:text-white">
+    <nav className="flex space-x-4
+      bg-zinc-100 dark:bg-zinc-900 px-6 py-3 shadow-md
+      text-zinc-900 dark:text-zinc-100"
+    >
+      <h1 className="text-lg font-semibold tracking-tight
+        text-zinc-800 dark:text-white"
+      >
         Scriptory
       </h1>
       <div className="flex space-x-2">
